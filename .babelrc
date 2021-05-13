@@ -1,0 +1,38 @@
+{
+	"presets": ["@babel/preset-env", "@babel/preset-react", "@babel/typescript"],
+	"plugins": [
+		[
+			"import",
+			{
+				"libraryName": "antd",
+				"libraryDirectory": "es",
+				"style": "css"
+			}
+		],
+		[
+			"import",
+			{
+				"libraryName": "@ant-design/icons",
+				"libraryDirectory": "es/icons",
+				"camel2DashComponentName": false
+			},
+			"@ant-design/icons"
+		],
+		[
+			"transform-imports",
+			{
+				"lodash": {
+					"preventFullImport": true,
+					"transform": "lodash/${member}"
+				},
+				"lodash-es": {
+					"transform": "lodash/${member}",
+					"preventFullImport": true
+				}
+			}
+		],
+		"@babel/proposal-class-properties",
+		"@babel/proposal-object-rest-spread",
+        "@babel/plugin-transform-runtime"
+	]
+}
